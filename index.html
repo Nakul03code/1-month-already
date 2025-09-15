@@ -1,138 +1,146 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Nakul ❤ Priya – 1-Month Anniversary</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Nakul ❤ Priya – 1-Month Anniversary</title>
 
-  <style>
-    :root {
-      --bg: #0f1724;
-      --accent: #ff6b81;
-      --muted: #cbd5e1;
-    }
-    * {margin: 0; padding: 0; box-sizing: border-box;}
-    body {
-      font-family: 'Inter', system-ui;
-      background: linear-gradient(135deg, #0f1724, #1a2a40);
-      color: #fff;
-      height: 100vh;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
+<style>
+:root {
+  --bg: #0f1724;
+  --accent: #ff6b81;
+  --muted: #cbd5e1;
+}
+* {margin: 0; padding: 0; box-sizing: border-box;}
+body {
+  font-family: 'Inter', system-ui;
+  background: linear-gradient(135deg, #0f1724, #1a2a40);
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
 
-    /* floating hearts */
-    #hearts-container {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      pointer-events: none;
-      overflow: hidden;
-      z-index: 0;
-    }
-    .heart {
-      position: absolute;
-      color: var(--accent);
-      opacity: 0.7;
-      font-size: 20px;
-      animation: floatUp 6s linear infinite;
-    }
-    @keyframes floatUp {
-      0% {transform: translateY(100vh) scale(0.8); opacity: 0;}
-      50% {opacity: 1;}
-      100% {transform: translateY(-10vh) scale(1.3); opacity: 0;}
-    }
+/* floating hearts */
+#hearts-container {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+.heart {
+  position: absolute;
+  color: var(--accent);
+  opacity: 0.7;
+  font-size: 16px;
+  animation: floatUp 6s linear infinite;
+}
+@keyframes floatUp {
+  0% {transform: translateY(100vh) scale(0.8); opacity: 0;}
+  50% {opacity: 1;}
+  100% {transform: translateY(-10vh) scale(1.3); opacity: 0;}
+}
 
-    /* content box */
-    .content {
-      text-align: center;
-      z-index: 2;
-      position: relative;
-    }
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 8px;
-      background: linear-gradient(90deg, #ff9aa2, #ffdde1);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .subtitle {color: var(--muted); margin-bottom: 20px;}
-    .message-box {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 20px;
-      border-radius: 16px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-      max-width: 600px;
-      margin: 0 auto;
-      animation: fadeIn 1.2s ease-in-out;
-    }
-    .message-box h2 {
-      margin-bottom: 10px;
-      color: #ff9aa2;
-    }
-    .signature {margin-top: 12px; font-weight: 600;}
+/* content box */
+.content {
+  text-align: center;
+  z-index: 2;
+  position: relative;
+  padding: 10px;
+}
+h1 {
+  font-size: 2rem;
+  margin-bottom: 6px;
+  background: linear-gradient(90deg, #ff9aa2, #ffdde1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.subtitle {color: var(--muted); margin-bottom: 16px;}
+.message-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 16px;
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+  max-width: 90%;
+  margin: 0 auto;
+  animation: fadeIn 1s ease-in-out;
+}
+.message-box h2 {
+  margin-bottom: 8px;
+  color: #ff9aa2;
+}
+.signature {margin-top: 10px; font-weight: 600;}
 
-    /* slideshow */
-    .slideshow-container {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      z-index: 1;
-      overflow: hidden;
-    }
-    .slide {
-      display: none;
-      position: absolute;
-      width: 100%; height: 100%;
-    }
-    .slide img,
-    .slide video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: brightness(0.5);
-      display: block;
-    }
-    .fade {animation: fadeEffect 2s;}
-    @keyframes fadeEffect {from {opacity: 0.4} to {opacity: 1}}
+/* slideshow */
+.slideshow-container {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+.slide {
+  display: none;
+  position: absolute;
+  width: 100%; height: 100%;
+}
+.slide img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
+}
+.fade {animation: fadeEffect 2s;}
+@keyframes fadeEffect {from {opacity: 0.4} to {opacity: 1}}
 
-    footer {
-      position: absolute;
-      bottom: 15px;
-      font-size: 14px;
-      color: var(--muted);
-      z-index: 2;
-    }
-  </style>
+footer {
+  position: absolute;
+  bottom: 10px;
+  font-size: 12px;
+  color: var(--muted);
+  z-index: 2;
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  h1 { font-size: 1.6rem; }
+  .message-box { padding: 12px; }
+  .message-box h2 { font-size: 1.2rem; }
+  .subtitle { font-size: 0.9rem; }
+  .heart { font-size: 12px; }
+}
+</style>
 </head>
 <body>
-  <!-- Floating hearts background -->
-  <div id="hearts-container"></div>
 
-  <!-- Main message -->
-  <div class="content">
-    <h1>Happy 1-Month Anniversary ❤</h1>
-    <p class="subtitle">Nakul & Priya Dharsini Prakash</p>
+<!-- Floating hearts background -->
+<div id="hearts-container"></div>
 
-    <div class="message-box">
-      <h2>To Priyaaaaa</h2>
-      <p>
-        One month down, a lifetime to go!<br>
-        In just 31 days, you’ve turned ordinary moments into memories I’ll treasure forever.<br>
-        You’re my calm, my joy, and my favorite reason to smile.<br>
-        Forever yours, my sweet kanmanii ❤️
-      </p>
-      <p class="signature">- Nakul</p>
-    </div>
+<!-- Main message -->
+<div class="content">
+  <h1>Happy 1-Month Anniversary ❤</h1>
+  <p class="subtitle">Nakul & Priya Dharsini Prakash</p>
+
+  <div class="message-box">
+    <h2>To Priya</h2>
+    <p>
+      One month down, a lifetime to go!<br>
+      In just 31 days, you’ve turned ordinary moments into memories I’ll treasure forever.<br>
+      You’re my calm, my joy, and my favorite reason to smile.<br>
+      Forever yours, my sweet kanmanii ❤️
+    </p>
+    <p class="signature">- Nakul</p>
   </div>
+</div>
 
-  <!-- Slideshow -->
-  <div class="slideshow-container">
+<!-- Slideshow -->
+<div class="slideshow-container">
     <!-- Video as first slide -->
     <div class="slide fade">
       <video muted playsinline>
@@ -154,46 +162,34 @@
     </div>
   </div>
 
-  <footer>Made with love & code ❤</footer>
 
-  <script>
-    // floating hearts
-    function createHeart(){
-      const heart = document.createElement('div');
-      heart.className = 'heart';
-      heart.style.left = Math.random() * 100 + 'vw';
-      heart.style.fontSize = (14 + Math.random() * 24) + 'px';
-      heart.style.animationDuration = (4 + Math.random() * 3) + 's';
-      heart.textContent = '❤';
-      document.getElementById('hearts-container').appendChild(heart);
-      setTimeout(() => heart.remove(), 6000);
-    }
-    setInterval(createHeart, 800);
+<footer>Made with love & code ❤</footer>
 
-    // slideshow
-    let slideIndex = 0;
-    showSlides();
-    function showSlides() {
-      let slides = document.getElementsByClassName("slide");
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) {slideIndex = 1}
+<script>
+// floating hearts
+function createHeart(){
+  const heart = document.createElement('div');
+  heart.className = 'heart';
+  heart.style.left = Math.random() * 100 + 'vw';
+  heart.style.fontSize = (12 + Math.random() * 16) + 'px';
+  heart.style.animationDuration = (4 + Math.random() * 3) + 's';
+  heart.textContent = '❤';
+  document.getElementById('hearts-container').appendChild(heart);
+  setTimeout(() => heart.remove(), 6000);
+}
+setInterval(createHeart, 800);
 
-      let currentSlide = slides[slideIndex-1];
-      currentSlide.style.display = "block";
-
-      // If it's a video, play it fully then move on
-      let video = currentSlide.querySelector("video");
-      if (video) {
-        video.currentTime = 0;
-        video.play();
-        video.onended = () => { showSlides(); };
-      } else {
-        setTimeout(showSlides, 4000); // image stays for 4 sec
-      }
-    }
-  </script>
+// slideshow
+let slideIndex = 0;
+showSlides();
+function showSlides() {
+  let slides = document.getElementsByClassName("slide");
+  for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";
+  slideIndex++;
+  if (slideIndex > slides.length) slideIndex = 1;
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 4000); // change every 4 sec
+}
+</script>
 </body>
 </html>
